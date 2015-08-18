@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'jmeter'
+
+buildscript {
+  repositories {
+      mavenCentral()
+  }
+  dependencies {
+        classpath "com.github.kulya:jmeter-gradle-plugin:1.3.4-2.13"
+    }
+}
+jmeterRun.configure {
+    jmeterTestFiles = [file("src/test/jmeter/hello.jmx")]
+}
